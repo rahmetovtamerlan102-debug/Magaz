@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: edit-shop-bot
+    runtime: python
+    plan: free
+    envVars:
+      - key: BOT_TOKEN
+        value: 8755950259:AAHpBRy-4GPf1Ulz63Bt_0a9O-g5UmQ4Ym0
+      - key: PORT
+        value: 8080
+      - key: PYTHON_VERSION
+        value: 3.10.12
+    buildCommand: pip install --upgrade pip && pip install aiogram==3.10.0 python-dotenv aiohttp Flask
+    startCommand: python bot.py
